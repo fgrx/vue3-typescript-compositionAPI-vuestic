@@ -1,4 +1,15 @@
 # vue3-composition-ts-vuestic
+A Vue 3 test with composition API / Typescript and Vuestic UI library
+
+## Install fake api server
+```
+npm install -D json-server json-server-auth
+```
+
+## run fake api server
+```
+json-server db.json -m ./node_modules/json-server-auth --watch
+```
 
 ## Project setup
 ```
@@ -15,10 +26,3 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
