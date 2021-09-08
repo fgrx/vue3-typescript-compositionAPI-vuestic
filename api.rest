@@ -10,6 +10,32 @@ Content-Type: application/json
 
 get http://localhost:3000/users?user=admin@gmail.com&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTYzMDk1MzkzMCwiZXhwIjoxNjMwOTU3NTMwLCJzdWIiOiIyIn0.a0CjuWoILGVFBNHcRG-KO91I1ODadDeDZ5JMlSR3KEw
 
+###
+get http://localhost:3000/ressources
+
+###
+get http://localhost:3000/664/ressources
+Content-Type: application/json
+Authorization: Bearer $2a$10$Fwcm44/18du6gGE7FpFdkO6vgjce5mW.jsAYtD.pfwAQnNAjWbERm
+
+###
+patch http://localhost:3000/ressources/fsfsd
+Content-Type: application/json
+
+{
+    "isTop": false,
+    "isValid": false
+}
+
+###
+patch http://localhost:3000/664/ressources/fsfsd
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTYzMTA5OTgxNywiZXhwIjoxNjMxMTAzNDE3LCJzdWIiOiIyIn0.zn_XiYUOXeuKoUbemXwN6xoKbc_PBapOiMxk-K-rgZg
+Content-Type: application/json
+
+{
+    "isTop": false,
+    "isValid": true
+}
 
 ###
 post http://localhost:3000/users

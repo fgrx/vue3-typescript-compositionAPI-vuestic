@@ -43,19 +43,22 @@ import RessourceService from "@/services/ressourceService";
 export default defineComponent({
   setup() {
     const store = useStore();
+    const user = store.state.authModule.user;
 
     const ressourceService = new RessourceService();
 
-    const ressources = computed(() => store.getters["ressourceModule/getValidRessources"]);
+    const ressources = computed(
+      () => store.getters["ressourceModule/getValidRessources"]
+    );
 
     const deleteRessourceAction = async (id: string) => {
-      const res = await ressourceService.deleteRessourceByID(id);
+      const res = await ressourceService.deleteRessourceByID(id, user.token);
       if (res) store.dispatch("ressourceModule/deleteRessourceAction", id);
     };
 
     const switchIsTopAction = async (ressource: IRessource) => {
       ressource.isTop = !ressource.isTop;
-      const res = await ressourceService.updateRessource(ressource);
+      const res = await ressourceService.updateRessource(ressource, user.token);
       if (res)
         store.dispatch("ressourceModule/updateRessourceAction", ressource);
     };

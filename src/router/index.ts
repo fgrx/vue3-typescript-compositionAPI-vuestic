@@ -61,11 +61,14 @@ const router = createRouter({
 router.beforeEach(async (to,from,next)=>{
 
   const state:any = store.state
-  const userInStore=state.authModule.user
+  const user=state.authModule.user
 
   const isPageProtected = to.matched.some(route=>route.meta.needAuth)
 
-  if( !userInStore && isPageProtected){
+  console.log({user,isPageProtected});
+  
+
+  if( !user && isPageProtected){
     next({name:"Login"})
   }else{
     next()
